@@ -1,0 +1,1403 @@
+/* Moneed Fintech Mobile App Dizayni - Oila Budjeti */
+
+:root {
+  --primary-blue: #1a62ff;
+  --primary-blue-hover: #0e52e4;
+  --accent-lime: #b9f939;
+  --dark-pill: #18191e;
+  --dark-pill-hover: #262830;
+  --danger-red: #ef4444;
+  --danger-red-hover: #dc2626;
+  --income-green: #10b981;
+  --income-green-hover: #059669;
+  --warning-amber: #f59e0b;
+  --bg-page: #f4f5f8;
+  --card-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --border-subtle: #f0f2f5;
+  --border-strong: #e2e8f0;
+  --shadow-card: 0 8px 24px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+  --shadow-nav: 0 16px 36px rgba(0, 0, 0, 0.28);
+  --radius-card: 24px;
+  --radius-inner: 16px;
+  --radius-pill: 999px;
+  
+  /* Kategoriya ranglari */
+  --cat-talim: #1a62ff;
+  --cat-transport: #f59e0b;
+  --cat-kitob: #8b5cf6;
+  --cat-kredit: #ef4444;
+  --cat-ovqat: #10b981;
+  --cat-kommunal: #0284c7;
+  --cat-salomatlik: #ec4899;
+  --cat-boshqa: #64748b;
+  --cat-oylik: #10b981;
+  --cat-pensiya: #06b6d4;
+  --cat-biznes: #f59e0b;
+  --cat-yordam: #8b5cf6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #e5e8ee;
+  color: var(--text-main);
+  line-height: 1.45;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Mobil qurilma wrapperi */
+.mobile-wrapper {
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  padding: 14px 18px 105px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* YUQORI HEADER */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 2px 14px 2px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  transform: skewX(-14deg);
+}
+
+.logo-shape {
+  display: inline-block;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.logo-shape.blue {
+  width: 8px;
+  background-color: var(--primary-blue);
+}
+
+.logo-shape.lime {
+  width: 14px;
+  background-color: var(--accent-lime);
+}
+
+.brand-name {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--text-main);
+  display: block;
+  line-height: 1.1;
+}
+
+.brand-sub {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.2px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-pill);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: background-color 0.15s, transform 0.05s;
+}
+
+.icon-btn:hover {
+  background-color: #f8fafc;
+}
+
+.icon-btn:active {
+  transform: scale(0.95);
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(29, 78, 216, 0.25);
+}
+
+/* OYMA-OY NAVIGATOR BAR */
+.month-navigator-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-inner);
+  padding: 6px 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.month-nav-arrow {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.month-nav-arrow:hover {
+  background-color: #f1f5f9;
+}
+
+.month-display-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.month-display-box:hover {
+  background-color: #f8fafc;
+}
+
+.current-month-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.btn-all-months {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  background-color: #f8fafc;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-all-months.active {
+  background-color: var(--dark-pill);
+  color: #ffffff;
+  border-color: var(--dark-pill);
+}
+
+/* TABLAR TUZILMASI */
+.tab-content-area {
+  flex: 1;
+}
+
+.tab-page {
+  display: none;
+  animation: fadeIn 0.22s ease-out;
+}
+
+.tab-page.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* UMUMIY KARTOCHKA STILLARI */
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-card);
+  padding: 22px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.3px;
+}
+
+.card-subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* 1. BALANS / CASHFLOW VA BUDJET KARTASI */
+.balance-card {
+  padding: 22px;
+}
+
+.card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.card-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tag-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background-color: #eff6ff;
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tag-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.icon-btn-subtle {
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn-subtle:hover {
+  color: var(--text-main);
+}
+
+.balance-amount {
+  font-size: 33px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.8px;
+  margin-bottom: 16px;
+}
+
+/* Kirim va Chiqim 2 ustunli summary bloki */
+.cashflow-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.cashflow-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-inner);
+  border: 1px solid var(--border-subtle);
+  background-color: #fafbfc;
+}
+
+.cashflow-icon-wrap {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.income-icon {
+  background-color: #dcfce7;
+  color: var(--income-green);
+}
+
+.expense-icon {
+  background-color: #fee2e2;
+  color: var(--danger-red);
+}
+
+.cashflow-data {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cashflow-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.cashflow-value {
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-green {
+  color: var(--income-green);
+}
+
+.text-red {
+  color: var(--danger-red);
+}
+
+/* Oylik budjet qutisi */
+.budget-status-box {
+  background-color: #f8fafc;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-inner);
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+
+.budget-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.budget-title-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.budget-caption {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.budget-limit-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.btn-budget-edit {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  background: transparent;
+  border: 1px solid rgba(26, 98, 255, 0.25);
+  border-radius: var(--radius-pill);
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.btn-budget-edit:hover {
+  background-color: #eff6ff;
+}
+
+.budget-progress-track {
+  width: 100%;
+  height: 8px;
+  background-color: #e2e8f0;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.budget-progress-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background-color: var(--primary-blue);
+  transition: width 0.35s ease, background-color 0.2s;
+}
+
+.budget-progress-fill.warning {
+  background-color: var(--warning-amber);
+}
+
+.budget-progress-fill.danger {
+  background-color: var(--danger-red);
+}
+
+.budget-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.budget-footer-sub {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.budget-pct-val {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Tezkor tugmalar */
+.quick-actions-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 13px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 13.5px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-action-primary {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+}
+
+.btn-action-primary:hover {
+  background-color: var(--primary-blue-hover);
+}
+
+.btn-action-income {
+  background-color: var(--income-green);
+  color: #ffffff;
+}
+
+.btn-action-income:hover {
+  background-color: var(--income-green-hover);
+}
+
+/* 2. TAQSIMOT KARTASI */
+.dist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.dist-title-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.expense-badge-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #fee2e2;
+  color: var(--danger-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.period-pill {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background-color: #f1f5f9;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.multi-segment-bar-wrap {
+  width: 100%;
+  height: 12px;
+  background-color: #f1f5f9;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.multi-segment-bar {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.segment-slice {
+  height: 100%;
+  transition: width 0.35s ease;
+}
+
+.category-legend-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.legend-pct {
+  color: var(--text-main);
+}
+
+/* SO'NGGI AMALLAR BLOKI */
+.recent-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.text-link {
+  background: transparent;
+  border: none;
+  color: var(--primary-blue);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.compact-list .expense-item {
+  padding: 10px 12px;
+}
+
+/* 3. YANGI YOZUV QO'SHISH (TAB 2) */
+.transaction-type-switcher {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background-color: #f1f5f9;
+  padding: 4px;
+  border-radius: var(--radius-inner);
+  margin-bottom: 18px;
+}
+
+.type-switch-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.type-switch-btn.active.expense {
+  background-color: #ffffff;
+  color: var(--danger-red);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.15);
+}
+
+.type-switch-btn.active.income {
+  background-color: #ffffff;
+  color: var(--income-green);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
+}
+
+.amount-input-box {
+  background-color: #f8fafc;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-inner);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  transition: border-color 0.2s;
+}
+
+.amount-input-box:focus-within {
+  border-color: var(--primary-blue);
+  background-color: #ffffff;
+}
+
+.input-label-sm {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.amount-field-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.amount-field-wrap input {
+  font-size: 27px;
+  font-weight: 800;
+  color: var(--text-main);
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+}
+
+.amount-field-wrap input::placeholder {
+  color: #cbd5e1;
+}
+
+.currency-tag {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.form-field-group {
+  margin-bottom: 16px;
+}
+
+.styled-text-input {
+  width: 100%;
+  padding: 13px 14px;
+  font-size: 14px;
+  border-radius: var(--radius-inner);
+  border: 1px solid var(--border-strong);
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s;
+  color: var(--text-main);
+}
+
+.styled-text-input:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(26, 98, 255, 0.12);
+}
+
+.category-chips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.chip-item {
+  padding: 10px 6px;
+  border-radius: 12px;
+  border: 1px solid var(--border-strong);
+  background-color: #f8fafc;
+  color: var(--text-main);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chip-item.active {
+  background-color: var(--dark-pill);
+  color: #ffffff;
+  border-color: var(--dark-pill);
+}
+
+.btn-submit-full {
+  width: 100%;
+  background-color: var(--primary-blue);
+  color: #ffffff;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  margin-top: 6px;
+}
+
+.btn-submit-full.income-submit {
+  background-color: var(--income-green);
+}
+
+.error-message {
+  display: none;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: var(--danger-red);
+  padding: 12px 16px;
+  border-radius: var(--radius-inner);
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+/* 4. TRANZAKSIYALAR / TARIX RO'YXATI (TAB 3) */
+.history-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.title-with-count {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.count-badge {
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #f1f5f9;
+  color: var(--text-main);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.history-filter-pills {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.filter-pill {
+  flex: 1;
+  padding: 7px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  background-color: #f8fafc;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s;
+}
+
+.filter-pill.active {
+  background-color: var(--dark-pill);
+  color: #ffffff;
+  border-color: var(--dark-pill);
+}
+
+.search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f8fafc;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-inner);
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  color: var(--text-muted);
+}
+
+.search-input-wrap input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  width: 100%;
+  color: var(--text-main);
+}
+
+.expense-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.expense-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-inner);
+  background-color: #ffffff;
+  transition: all 0.15s ease;
+}
+
+.expense-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.cat-indicator-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.expense-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.expense-title-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.expense-cat-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.expense-right-side {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
+.expense-sum {
+  font-size: 14px;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.expense-sum.sum-expense {
+  color: var(--text-main);
+}
+
+.expense-sum.sum-income {
+  color: var(--income-green);
+}
+
+.btn-del-mini {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.btn-del-mini:hover {
+  color: var(--danger-red);
+  background-color: #fee2e2;
+}
+
+/* 5. TAHLIL / KATEGORIYALAR HISOBI (TAB 4) */
+.analytics-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.category-stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.category-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat-left-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-category-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.stat-category-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.stat-right-info {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.stat-amount-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.stat-pct-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  min-width: 42px;
+  text-align: right;
+}
+
+.progress-track {
+  width: 100%;
+  height: 8px;
+  background-color: #f1f5f9;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.progress-fill-bar {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  transition: width 0.35s ease;
+}
+
+.empty-notice {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  padding: 24px 0;
+  font-style: italic;
+}
+
+/* FLOATING NAV BAR (Moneed Style Pill) */
+.floating-nav-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--dark-pill);
+  border-radius: var(--radius-pill);
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: var(--shadow-nav);
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 9px 12px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-btn .nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-btn .nav-text {
+  display: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.nav-btn.active {
+  background-color: #ffffff;
+  color: var(--dark-pill);
+  padding: 9px 16px;
+}
+
+.nav-btn.active .nav-text {
+  display: inline-block;
+}
+
+.nav-btn:hover:not(.active) {
+  color: #ffffff;
+}
+
+/* MODAL OYNALARI */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-sheet {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 28px 28px 0 0;
+  padding: 24px;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.btn-close-modal {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-section {
+  background-color: #f8fafc;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-inner);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.settings-label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 12px;
+}
+
+.settings-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.budget-input-display-box {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.modal-amount-wrap {
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 16px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.modal-amount-wrap:focus-within {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(26, 98, 255, 0.12);
+}
+
+.modal-amount-wrap input {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-main);
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  letter-spacing: -0.5px;
+  min-width: 0;
+}
+
+.modal-amount-wrap .currency-tag {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.budget-stepper-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.btn-step-wide {
+  background-color: #f1f5f9;
+  border: 1px solid var(--border-strong);
+  color: var(--text-main);
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.btn-step-wide:hover {
+  background-color: #e2e8f0;
+}
+
+.btn-step-wide:active {
+  transform: scale(0.97);
+  background-color: var(--dark-pill);
+  color: #ffffff;
+}
+
+.btn-step-wide .step-symbol {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.budget-quick-presets,
+.budget-add-steps {
+  margin-bottom: 14px;
+}
+
+.preset-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.preset-chips-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.budget-chip {
+  background-color: #ffffff;
+  border: 1px solid var(--border-strong);
+  color: var(--text-main);
+  padding: 7px 13px;
+  border-radius: var(--radius-pill);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.budget-chip:hover {
+  background-color: #f8fafc;
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.budget-chip.active {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+  border-color: var(--primary-blue);
+  box-shadow: 0 2px 8px rgba(26, 98, 255, 0.25);
+}
+
+.budget-chip.step-chip {
+  background-color: #f8fafc;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.budget-chip.step-chip:hover {
+  background-color: #eff6ff;
+  color: var(--primary-blue);
+}
+
+.settings-btn-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-text-danger {
+  background: transparent;
+  border: none;
+  color: var(--danger-red);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+.backup-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.btn-backup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border-strong);
+  background-color: #ffffff;
+  color: var(--text-main);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-backup:hover {
+  background-color: #f1f5f9;
+}
+
+/* Moslashuvchanlik */
+@media (max-width: 440px) {
+  body {
+    background-color: var(--bg-page);
+  }
+  
+  .mobile-wrapper {
+    box-shadow: none;
+  }
+
+  .floating-nav-bar {
+    bottom: 14px;
+    width: calc(100% - 32px);
+    justify-content: space-around;
+  }
+}
